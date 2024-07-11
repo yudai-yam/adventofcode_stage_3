@@ -25,18 +25,21 @@ def scanner(file_path):
 def get_number_data(lines):
     number_index_list = []
     row = 0
-    column = 0
-
     # look for a number
     for line in lines:
+        column = 0
+        print(line)
         while(column<len(line)-1):
             char = line[column]
+
+            print(char)
 
             # get a full number
             if char.isnumeric():
                 number = ""
                 index = []
                 while(char.isnumeric()):
+                    print("s")
                     number = number + char
                     index.append([column, row])
                     column = column + 1
@@ -44,10 +47,8 @@ def get_number_data(lines):
 
                 number_index_list.append([number, index])
                 
-            print("a")
             column = column + 1
-
-    
+        row = row + 1
     print(number_index_list)
     
         
